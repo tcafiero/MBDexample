@@ -18,6 +18,8 @@ int main() {
 	calculator.rH=&Hinstance;
 	F op1;
 	I Machine;
+	cout << "6+2=" << calculator.sum(6,2) << endl;
+	cout << "6-2=" << calculator.sub(6,2) << endl;
 	cout << "6/2=" << calculator.rC.div(6,2 ) << endl;
 	cout << "6*2=" << calculator.rC.mul(6,2 )<< endl;
 	cout << "Compare(5,5)=" << op1.Compare(5,5) << endl;
