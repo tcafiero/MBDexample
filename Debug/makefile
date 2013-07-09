@@ -8,7 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/subdir.mk
+-include src/class/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -38,19 +38,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: tegra_try1
+all: MBDexample
 
 # Tool invocations
-tegra_try1: $(OBJS) $(USER_OBJS)
+MBDexample: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	arm-none-linux-gnueabi-g++  -o "tegra_try1" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-linux-gnueabi-g++  -o "MBDexample" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) tegra_try1
+	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) MBDexample
 	-@echo ' '
 
 .PHONY: all clean dependents
